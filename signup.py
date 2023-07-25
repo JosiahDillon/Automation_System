@@ -6,6 +6,7 @@ import random
 import string
 import requests
 import json
+import os
 
 # SMS config
 API_KEY = 'Y3RI_fbBnETtQW3RPq-JNC90EMEFSG9G'
@@ -15,14 +16,15 @@ application_id = 3
 # Appium server
 server = 'http://127.0.0.1:4723/wd/hub'
 
+apk = os.path.join(os.getcwd(), 'Telegram.apk')
 # Set up Appium capabilities for your device or emulator
 desired_caps = {
     "platformName": "Android",
-    "platformVersion": "13",
-    "deviceName": "Pixel_3a_API_30_x86",
+    "platformVersion": "11",
+    "deviceName": "cloud",
     "appPackage": "org.telegram.messenger",
     "appActivity": "org.telegram.ui.LaunchActivity",
-    "automationName": "UiAutomator2"
+    "app": apk
 }
 
 # New phone number
